@@ -1,0 +1,430 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  background-color: #f4b400;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 55px;
+}
+
+.college-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+}
+
+.nav-right a {
+  text-decoration: none;
+  color: #000;
+  margin-left: 22px;
+  font-weight: 500;
+}
+
+.nav-right a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   HERO IMAGE SLIDER (FIXED)
+========================= */
+.hero {
+  height: 520px;
+}
+
+.slider {
+  position: relative;
+  height: 520px;
+  overflow: hidden;
+}
+
+.slides {
+  position: relative;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dark overlay like figma */
+.slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 36px;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 14px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 50%;
+  z-index: 5;
+}
+
+.arrow.prev { left: 20px; }
+.arrow.next { right: 20px; }
+
+/* Dots */
+.dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 5;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  opacity: 0.5;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  opacity: 1;
+}
+
+/* =========================
+   HOME ABOUT PREVIEW
+========================= */
+.about {
+  padding: 60px 80px;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #f4b400;
+}
+
+.about p {
+  max-width: 900px;
+  margin: auto;
+  font-size: 16px;
+  color: #444;
+}
+
+/* =========================
+   VIRTUAL TOUR
+========================= */
+.tour {
+  background: linear-gradient(#ffe29a, #f4b400);
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.tour h2 {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+.tour-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.tour-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.tour-card:hover {
+  transform: scale(1.05);
+}
+
+.tour-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.tour-card h3 {
+  padding: 10px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+.contact {
+  background-color: #4a4a4a;
+  color: #fff;
+  padding: 60px 40px;
+}
+
+.contact h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contact-wrapper {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.map iframe {
+  width: 350px;
+  height: 250px;
+  border-radius: 8px;
+}
+
+.contact-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
+.contact-form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  width: 100%;
+}
+
+/* =========================
+   ABOUT PAGE
+========================= */
+.about-title {
+  background-color: #f4b400;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.about-content {
+  padding: 60px 100px;
+  text-align: center;
+}
+
+.vm-section {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 60px 80px;
+  flex-wrap: wrap;
+}
+
+.vm-box {
+  width: 280px;
+  text-align: center;
+}
+
+.vm-box h3 {
+  color: #f4b400;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  background-color: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 15px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 600px) {
+  .slider {
+    height: 360px;
+  }
+}
+/* =========================
+   ABOUT PAGE POLISH – FIGMA STYLE
+========================= */
+
+.about-title {
+  background-color: #f4b400;
+  padding: 45px 0;
+  text-align: center;
+}
+
+.about-title h1 {
+  font-size: 38px;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: 0.5px;
+}
+
+.about-content {
+  padding: 70px 120px;
+  text-align: center;
+}
+
+.about-content p {
+  max-width: 900px;
+  margin: auto;
+  font-size: 16px;
+  line-height: 1.9;
+  color: #444;
+}
+
+/* Vision / Mission / Core Values */
+.vm-section {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 80px;
+  flex-wrap: wrap;
+}
+
+.vm-box {
+  width: 280px;
+  background: #fff;
+  padding: 25px 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vm-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.2);
+}
+
+.vm-box h3 {
+  color: #f4b400;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.vm-box p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.7;
+}
+
+/* Mobile About */
+@media (max-width: 600px) {
+  .about-content {
+    padding: 40px 20px;
+  }
+}
+/* =========================
+   VIRTUAL TOUR HOVER ZOOM – FIGMA
+========================= */
+
+.tour-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.tour-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.tour-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.tour-card h3 {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  color: #fff;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 2;
+}
+
+/* Hover Effects */
+.tour-card:hover img {
+  transform: scale(1.15);
+}
+
+.tour-card:hover::after {
+  opacity: 1;
+}
+
+.tour-card:hover h3 {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.gallery-full {
+  padding: 40px;
+  text-align: center;
+}
+.gallery-full img {
+  width: 90%;
+  max-width: 1000px;
+  border-radius: 12px;
+}

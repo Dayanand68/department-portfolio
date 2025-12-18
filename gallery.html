@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-left">
+    <img src="assets/image/logo.jpg" class="logo">
+    <span class="college-name">Christ The King Engineering College</span>
+  </div>
+  <nav class="nav-right">
+    <a href="index.html">Home</a>
+    <a href="virtual-tour.html">Back</a>
+  </nav>
+</header>
+
+<section class="gallery-full">
+  <img id="fullImage" alt="Gallery Image">
+</section>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const img = params.get("img");
+  document.getElementById("fullImage").src = "assets/image/" + img;
+</script>
+
+</body>
+</html>
